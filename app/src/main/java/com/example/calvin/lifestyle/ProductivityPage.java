@@ -15,11 +15,10 @@ public class ProductivityPage extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.productivity_page);
-
     }
 
-    public void onProductivityClicked(View s){
-        if(s.getId() == R.id.backWaterButton){
+    public void onProductivityBackClicked(View s){
+        if(s.getId() == R.id.backProductivityButton){
             Intent i = new Intent(ProductivityPage.this, IntroPage.class);
             startActivity(i);
 

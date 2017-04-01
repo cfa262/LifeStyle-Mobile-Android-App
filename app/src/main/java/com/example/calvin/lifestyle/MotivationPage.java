@@ -18,8 +18,8 @@ public class MotivationPage extends Activity {
 
     }
 
-    public void onMotivationClicked(View s){
-        if(s.getId() == R.id.backWaterButton){
+    public void onMotivationBackClicked(View s){
+        if(s.getId() == R.id.backMotivationButton){
             Intent i = new Intent(MotivationPage.this, IntroPage.class);
             startActivity(i);
 

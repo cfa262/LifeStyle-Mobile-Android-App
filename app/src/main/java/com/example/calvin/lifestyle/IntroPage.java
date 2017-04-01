@@ -11,16 +11,12 @@ import android.widget.Toast;
 public class IntroPage extends AppCompatActivity {
     private static final String TAG = "CalvinsInitialApp";
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro_page);
     }
-        //Button btn = (Button) findViewById(R.id.button);
-        //Button bWater = (Button) findViewById(R.id.BWater);
-        //..happens when the user clicks
-        //BWater.setOnClickListener(new View.OnClickListener(){
-            //@Override
+
+    //@Override
     public void onWaterClicked(View v){
         if(v.getId() == R.id.BWater){
             Intent i = new Intent(IntroPage.this, Water.class);
@@ -37,15 +33,19 @@ public class IntroPage extends AppCompatActivity {
         }
     }
 
-        //});
-        /*
-        btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Log.i(TAG, "This is a magic message!");
-                Toast.makeText(getApplicationContext(), "It's magic!", Toast.LENGTH_SHORT).show();
-            }
-        });
-                */
+    public void onProductivityClicked(View s){
+        if(s.getId() == R.id.BProductivity){
+            Intent p = new Intent(IntroPage.this, ProductivityPage.class);
+            startActivity(p);
+
+        }
+    }
+    public void onMotivationClicked(View s){
+        if(s.getId() == R.id.BMotivation){
+            Intent m = new Intent(IntroPage.this, MotivationPage.class);
+            startActivity(m);
+
+        }
+    }
 
 }

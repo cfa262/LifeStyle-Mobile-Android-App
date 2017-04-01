@@ -16,9 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Water" />
-        <activity
-            android:name=".SettingsPage"
-            android:label="@string/title_activity_settings_page"></activity>
+        <activity android:name=".MotivationPage"/>
+        <activity android:name=".ProductivityPage"/>
+        <activity android:name=".SettingsPage"/>
     </application>
 
 </manifest>

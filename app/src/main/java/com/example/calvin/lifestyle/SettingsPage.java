@@ -18,8 +18,8 @@ public class SettingsPage extends Activity {
 
     }
 
-    public void onSettingsClicked(View s){
-        if(s.getId() == R.id.backWaterButton){
+    public void onSettingsBackClicked(View s){
+        if(s.getId() == R.id.backSettingsButton){
             Intent i = new Intent(SettingsPage.this, IntroPage.class);
             startActivity(i);
 
