@@ -19,6 +19,7 @@
         <activity android:name=".MotivationPage"/>
         <activity android:name=".ProductivityPage"/>
         <activity android:name=".SettingsPage"/>
+
     </application>
 
 </manifest>

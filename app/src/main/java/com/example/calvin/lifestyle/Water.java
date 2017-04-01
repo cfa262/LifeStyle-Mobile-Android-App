@@ -11,6 +11,9 @@ import android.view.View;
 
 public class Water extends Activity {
 
+    float waterAmount;
+    float tempWaterAmount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
