@@ -42,7 +42,7 @@ public class IntroPage extends AppCompatActivity {
                 Notification noti = new Notification.Builder(IntroPage.this)
                         .setTicker("TickerTITLE")
                         .setContentTitle("WATER REMINDER")
-                        .setContentText("It's time to drink water DAMMIT!")
+                        .setContentText("It's time to drink water!")
                         .setSmallIcon(R.drawable.ic_notifications_black_24dp)
                         .setContentIntent(pIntent).getNotification();
                 noti.flags = Notification.FLAG_AUTO_CANCEL;

@@ -21,17 +21,6 @@
         android:layout_marginTop="94dp" />
 
     <Button
-        android:text="Water"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/BWater"
-        android:onClick="onWaterClicked"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="69dp" />
-
-    <Button
         android:text="Settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -40,7 +29,8 @@
         android:layout_alignBottom="@+id/BWater"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:background="@android:drawable/ic_menu_agenda" />
 
     <Button
         android:text="Productivity"
@@ -51,18 +41,8 @@
         android:layout_above="@+id/BSettings"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="onProductivityClicked" />
-
-    <Button
-        android:text="Motivation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/BMotivation"
-        android:layout_alignBaseline="@+id/BProductivity"
-        android:layout_alignBottom="@+id/BProductivity"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="onMotivationClicked" />
+        android:onClick="onProductivityClicked"
+        android:background="@android:drawable/ic_menu_myplaces" />
 
     <Button
         android:text="Notify Me"
@@ -71,6 +51,33 @@
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="43dp"
-        android:id="@+id/notiButton" />
+        android:id="@+id/notiButton"
+        android:background="@android:drawable/ic_dialog_alert" />
+
+    <Button
+        android:text="Water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/BWater"
+        android:onClick="onWaterClicked"
+        android:background="?android:attr/textSelectHandle"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/BMotivation"
+        android:layout_alignEnd="@+id/BMotivation" />
+
+    <Button
+        android:text="Motivation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/BMotivation"
+        android:onClick="onMotivationClicked"
+        android:layout_alignBaseline="@+id/BProductivity"
+        android:layout_alignBottom="@+id/BProductivity"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:drawable/btn_star_big_on" />
 
 </RelativeLayout>
