@@ -21,6 +21,8 @@ public class ProductivityPage extends AppCompatActivity
 {
 
     private static final int MY_PERMISSIONS_REQUEST_PACKAGE_USAGE_STATS = 100;
+    int x=0;
+    System.out.println(x);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -87,7 +89,7 @@ public class ProductivityPage extends AppCompatActivity
         for (UsageStats lUsageStats:lUsageStatsList)
         {
             lStringBuilder.append(lUsageStats.getPackageName());
-            lStringBuilder.append(" : ");
+            lStringBuilder.append(" used : ");
             lStringBuilder.append(lUsageStats.getLastTimeUsed());
             lStringBuilder.append("\r\n");
         }
