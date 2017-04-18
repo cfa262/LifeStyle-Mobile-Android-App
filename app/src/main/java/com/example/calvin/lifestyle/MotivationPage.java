@@ -18,6 +18,7 @@ public class MotivationPage extends Activity {
 
     }
 
+    //goes back to Settings page
     public void onMotivationBackClicked(View s){
         if(s.getId() == R.id.backMotivationButton){
             Intent i = new Intent(MotivationPage.this, IntroPage.class);
