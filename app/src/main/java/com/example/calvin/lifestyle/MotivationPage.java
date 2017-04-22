@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+
 import java.util.*;
 
 /**
@@ -12,7 +14,7 @@ import java.util.*;
 
 public class MotivationPage extends Activity {
 
-    ArrayList<String> quotes = new ArrayList<String>();
+    private ArrayList<String> quotes = new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,8 +22,21 @@ public class MotivationPage extends Activity {
 
     }
 
-    public void addQuote(){
-        quotes.add("Add quote here");
+    public void quotes(){
+        this.quotes.add("The harder you try, the better you are");
+        this.quotes.add("Lets get moving!");
+        this.quotes.add("Keep it up!");
+        this.quotes.add("You are going to do great!");
+        this.quotes.add("No sleep till its done.");
+    }
+
+    //adds quote to current list of quotes
+    public void addQuote(View s){
+        if(s.getID().equals(R.id.addQuote)){
+            EditText input = (EditText)findViewById(R.id.waterNumberText);
+            String newQuote = input.getText().toString();
+            this.quotes.add(newQuote);
+        }
     }
 
     //@Override
