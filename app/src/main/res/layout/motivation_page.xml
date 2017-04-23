@@ -6,13 +6,58 @@
     android:background="@android:color/holo_green_light">
 
     <Button
-        android:text="Go Back"
+        android:text="Water"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/backMotivationButton"
+        android:id="@+id/waterButton"
         android:layout_weight="1"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="onMotivationBackClicked" />
+        android:onClick="onWaterClicked" />
+
+    <Button
+        android:id="@+id/productivityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Product"
+        android:onClick="onProductivityClicked"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/waterButton"
+        android:layout_toEndOf="@+id/waterButton" />
+
+    <Button
+        android:id="@+id/motivationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Motivation"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/productivityButton"
+        android:layout_toEndOf="@+id/productivityButton" />
+
+    <Button
+        android:id="@+id/introPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="Home" />
+
+    <EditText
+        android:id="@+id/addQuote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/waterButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="146dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:ems="10"
+        android:hint="Add motivational quote here"
+        android:inputType="text"
+        android:inputType="text"
+        android:layout_toLeftOf="@+id/introPage"
+        android:layout_toStartOf="@+id/introPage" />
 </RelativeLayout>
