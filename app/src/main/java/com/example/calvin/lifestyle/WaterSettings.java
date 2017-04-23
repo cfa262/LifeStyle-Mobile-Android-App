@@ -21,9 +21,7 @@ import android.widget.Toolbar;
 
 import java.util.Calendar;
 
-/**
- * Created by Calvin on 4/10/2017.
- */
+
 
 public class WaterSettings extends Activity {
 
@@ -42,11 +40,17 @@ public class WaterSettings extends Activity {
 
         // initiate a Switch
         Switch reminderSwitch = (Switch) findViewById(R.id.switch2);
-        Switch first1030 = (Switch) findViewById(R.id.switch3);
-        Switch second1100 = (Switch) findViewById(R.id.switch4);
-        Switch third1200 = (Switch) findViewById(R.id.switch5);
-        Switch tester = (Switch) findViewById(R.id.switch12);
         Switch percentDone = (Switch) findViewById(R.id.switch11);
+        Switch first830 = (Switch) findViewById(R.id.switch3);
+        Switch second930 = (Switch) findViewById(R.id.switch4);
+        Switch third1000 = (Switch) findViewById(R.id.switch5);
+        Switch fourth1100 = (Switch) findViewById(R.id.switch6);
+        Switch fifth1200 = (Switch) findViewById(R.id.switch7);
+        Switch sixth100 = (Switch) findViewById(R.id.switch8);
+        Switch seventh400 = (Switch) findViewById(R.id.switch9);
+        Switch testSwitch = (Switch) findViewById(R.id.switch12);
+
+
 
         /*
         Button button = (Button) findViewById(R.id.waterTesterButton);
@@ -75,9 +79,10 @@ public class WaterSettings extends Activity {
 
                 if (isChecked) {
                     Toast.makeText(getApplicationContext(), "ON", Toast.LENGTH_LONG).show();
+
                     Calendar calendar = Calendar.getInstance();
-                    calendar.set(Calendar.HOUR_OF_DAY,9);
-                    calendar.set(Calendar.MINUTE,5);
+                    calendar.set(Calendar.HOUR_OF_DAY,22);
+                    calendar.set(Calendar.MINUTE,35);
                     calendar.set(Calendar.SECOND,0);
                     Intent intent = new Intent(WaterSettings.this,NotificationReceiver.class);
                     //Intent intent = new Intent(getApplicationContext(),NotificationReceiver.class);
@@ -232,7 +237,6 @@ public class WaterSettings extends Activity {
                 .setContentTitle("WATER REMINDER")
                 .setContentText("It's time to drink water!")
                 .setSmallIcon(R.drawable.ic_notifications_black_24dp);
-
 
         Intent notificationIntent = new Intent(this, WaterSettings.class);
         PendingIntent contentIntent = PendingIntent.getActivity(WaterSettings.this,0, notificationIntent,

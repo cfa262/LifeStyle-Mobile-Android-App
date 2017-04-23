@@ -33,7 +33,9 @@ public class IntroPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro_page);
 
+        /*
         btn = (Button) findViewById(R.id.notiButton);
+
         btn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -48,8 +50,10 @@ public class IntroPage extends AppCompatActivity {
                 noti.flags = Notification.FLAG_AUTO_CANCEL;
                 NotificationManager  nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
                 nm.notify(0,noti);
+
             }
         });
+        */
 
         //context = this;
         //notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);

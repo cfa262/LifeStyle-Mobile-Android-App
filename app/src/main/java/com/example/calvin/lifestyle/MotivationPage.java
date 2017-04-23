@@ -5,9 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-/**
- * Created by Calvin on 3/18/2017.
- */
+
 
 public class MotivationPage extends Activity {
 

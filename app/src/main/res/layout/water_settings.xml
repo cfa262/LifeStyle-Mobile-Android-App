@@ -3,16 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/waterSettingsBackButton"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@android:drawable/ic_delete"
-        android:onClick="onWaterSettingsBackClicked" />
-
     <Switch
         android:text="Reminders"
         android:layout_width="wrap_content"
@@ -26,7 +16,7 @@
         android:layout_alignParentStart="true" />
 
     <Switch
-        android:text="10:00 AM"
+        android:text="8:30 AM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/switch2"
@@ -38,7 +28,7 @@
         android:layout_alignParentEnd="true" />
 
     <Switch
-        android:text="11:00 AM"
+        android:text="9:30 AM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/switch3"
@@ -49,7 +39,7 @@
         android:layout_alignParentEnd="true" />
 
     <Switch
-        android:text="12:00 PM"
+        android:text="10:00 AM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/switch4"
@@ -60,7 +50,7 @@
         android:layout_alignParentEnd="true" />
 
     <Switch
-        android:text="1:00 PM"
+        android:text="11:00 AM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/switch5"
@@ -71,7 +61,7 @@
         android:layout_alignParentEnd="true" />
 
     <Switch
-        android:text="2:00 PM"
+        android:text="12:00 PM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/switch6"
@@ -82,7 +72,7 @@
         android:layout_alignParentStart="true" />
 
     <Switch
-        android:text="3:00 PM"
+        android:text="1:00 PM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/switch7"
@@ -104,17 +94,6 @@
         android:layout_alignParentStart="true" />
 
     <Switch
-        android:text="5:00 PM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/switch9"
-        android:layout_alignRight="@+id/switch9"
-        android:layout_alignEnd="@+id/switch9"
-        android:id="@+id/switch10"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Switch
         android:text="Stop Reminders at 100%"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -129,21 +108,20 @@
         android:text="Testing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/switch10"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:id="@+id/switch12"
+        android:layout_below="@+id/switch9"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/switch12"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:id="@+id/waterTesterButton"
-        android:onClick="onClickTester" />
+        android:id="@+id/waterSettingsBackButton"
+        android:background="?attr/actionModeCloseDrawable"
+        android:onClick="onWaterSettingsBackClicked"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

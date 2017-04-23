@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-/**
- * Created by Calvin on 4/10/2017.
- */
+
 
 public class MotivationSettings extends Activity {
 

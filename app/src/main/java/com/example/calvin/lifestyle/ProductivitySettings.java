@@ -8,9 +8,7 @@ import android.widget.EditText;
 
 import java.lang.reflect.AccessibleObject;
 
-/**
- * Created by Calvin on 4/10/2017.
- */
+
 
 public class ProductivitySettings extends Activity {
 
