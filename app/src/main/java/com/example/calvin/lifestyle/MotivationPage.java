@@ -12,14 +12,14 @@ import android.widget.TextView;
 
 public class MotivationPage extends Activity {
 
-    TextView motivationalQuote;
+    TextView quoteGoesHere;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.motivation_page);
 
-        motivationalQuote = (TextView) findViewById(R.id.quoteGoesHere);
+        quoteGoesHere.setText();
     }
 
 
