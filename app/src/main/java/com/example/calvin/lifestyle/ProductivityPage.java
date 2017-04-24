@@ -1,6 +1,9 @@
 package com.example.calvin.lifestyle;
 
 import android.app.AppOpsManager;
+import android.content.pm.PackageManager;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningAppProcessInfo;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.Context;
@@ -14,8 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-
+import java.util.Iterator;
 
 public class ProductivityPage extends AppCompatActivity
 {
@@ -28,13 +30,6 @@ public class ProductivityPage extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.productivity_page);
         fillStats();
-    }
-    public void onProductivityBackClicked(View s)
-    {
-        if(s.getId() == R.id.backProductivityButton){
-            Intent i = new Intent(ProductivityPage.this, IntroPage.class);
-            startActivity(i);
-        }
     }
 
     private void fillStats()
@@ -83,15 +78,52 @@ public class ProductivityPage extends AppCompatActivity
         TextView lTextView = (TextView) findViewById(R.id.usage_stats);
 
         StringBuilder lStringBuilder = new StringBuilder();
-
+        lStringBuilder.append("\r\n\n\n\n");
+        PackageManager pm = this.getPackageManager();
+        CharSequence most=null;
+        long currentMost=0;
+        CharSequence least=null;
+        long currentLeast=0;
+        long total=0;
+        int count=0;
         for (UsageStats lUsageStats:lUsageStatsList)
         {
-            lStringBuilder.append(lUsageStats.getPackageName());
+            CharSequence c=null;
+            try {
+                 c= pm.getApplicationLabel(pm.getApplicationInfo(lUsageStats.getPackageName(), PackageManager.GET_META_DATA));
+            }catch(Exception e) {}
+            long time=TimeUnit.MILLISECONDS.toMinutes((lUsageStats.getTotalTimeInForeground()));
+            if(time==0)
+            {
+                continue;
+            }
+            if(count==0)
+            {
+                currentLeast=time;
+                count++;
+            }
+            if(time>currentMost)
+            {
+                most=c;
+                currentMost=time;
+            }
+            if(time<currentLeast)
+            {
+                least=c;
+                currentLeast=time;
+            }
+            total+=time;
+            lStringBuilder.append(c);
             lStringBuilder.append(" used : ");
-            lStringBuilder.append(lUsageStats.getLastTimeUsed());
+            lStringBuilder.append(TimeUnit.MILLISECONDS.toMinutes((lUsageStats.getTotalTimeInForeground())));
+            lStringBuilder.append(" minutes");
             lStringBuilder.append("\r\n");
         }
-
+        lStringBuilder.append("\r\n");
+        lStringBuilder.append("Statistics:\n");
+        lStringBuilder.append("Most used application: "+most + " "+ currentMost+" minutes\n");
+        lStringBuilder.append("Least used application: "+least +" "+ currentLeast+" minutes\n");
+        lStringBuilder.append("Total time spent on phone today: "+ total +" minutes\n");
         lTextView.setText(lStringBuilder.toString());
     }
 
