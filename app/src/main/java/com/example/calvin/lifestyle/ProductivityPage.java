@@ -2,8 +2,6 @@ package com.example.calvin.lifestyle;
 
 import android.app.AppOpsManager;
 import android.content.pm.PackageManager;
-import android.app.ActivityManager;
-import android.app.ActivityManager.RunningAppProcessInfo;
 import android.app.usage.UsageStats;
 import android.app.usage.UsageStatsManager;
 import android.content.Context;
@@ -12,12 +10,10 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.Iterator;
 
 public class ProductivityPage extends AppCompatActivity
 {
