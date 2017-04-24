@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.*;
+
 
 
 
@@ -21,15 +21,6 @@ public class MotivationPage extends Activity {
 
         motivationalQuote = (TextView) findViewById(R.id.quoteGoesHere);
     }
-
-    //adds quote to current list of quotes
-    /*public void addQuote(View s){
-        if(s.getID().equals(R.id.addQuote)){
-            EditText input = (EditText)findViewById(R.id.waterNumberText);
-            String newQuote = input.getText().toString();
-            this.quotes.add(newQuote);
-        }
-    }*/
 
 
 
