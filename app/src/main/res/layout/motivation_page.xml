@@ -6,58 +6,36 @@
     android:background="@android:color/holo_green_light">
 
     <Button
-        android:text="Water"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/waterButton"
+        android:id="@+id/backMotivationButton"
         android:layout_weight="1"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="onWaterClicked" />
+        android:onClick="onMotivationBackClicked"
+        android:background="?android:attr/homeAsUpIndicator"/>
 
-    <Button
-        android:id="@+id/productivityButton"
+    <TextView
+        android:id="@+id/quoteGoesHere"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Product"
-        android:onClick="onProductivityClicked"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/waterButton"
-        android:layout_toEndOf="@+id/waterButton" />
+        android:text="Excuses don't burn calories"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="101dp" />
 
     <Button
-        android:id="@+id/motivationButton"
+        android:id="@+id/motivationSettingsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Motivation"
+        android:layout_marginBottom="12dp"
+        android:text="Motivation Settings"
+        android:layout_marginRight="11dp"
+        android:layout_marginEnd="11dp"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/productivityButton"
-        android:layout_toEndOf="@+id/productivityButton" />
-
-    <Button
-        android:id="@+id/introPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="Home" />
+        android:layout_alignParentEnd="true" />
 
-    <EditText
-        android:id="@+id/addQuote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/waterButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="146dp"
-        android:layout_marginLeft="18dp"
-        android:layout_marginStart="18dp"
-        android:ems="10"
-        android:hint="Add motivational quote here"
-        android:inputType="text"
-        android:inputType="text"
-        android:layout_toLeftOf="@+id/introPage"
-        android:layout_toStartOf="@+id/introPage" />
+
 </RelativeLayout>
