@@ -32,14 +32,7 @@ public class MotivationPage extends Activity {
         int randomIndex = rand.nextInt(MotivationSettings.quotes.size() + 1);
         return quotesFromSettings.get(randomIndex);
     }
-    //goes back to Settings page
-    public void onMotivationBackClicked(View s){
-        if(s.getId() == R.id.backMotivationButton){
-            Intent i = new Intent(MotivationPage.this, IntroPage.class);
-            startActivity(i);
 
-        }
-    }
 
     //goes to the Motivation Settings page
     public void onMotivationSettingsClicked(View s){
