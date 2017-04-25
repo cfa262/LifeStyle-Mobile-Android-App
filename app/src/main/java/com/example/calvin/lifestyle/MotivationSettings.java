@@ -74,14 +74,6 @@ public class MotivationSettings extends Activity {
         });
     }
 
-    //goes back to the movitation page page
-    public void onMotiSettingsBackClicked(View s){
-        if(s.getId() == R.id.motivationSettingsBackButton){
-            Intent i = new Intent(MotivationSettings.this, MotivationPage.class);
-            startActivity(i);
-
-        }
-    }
 
 
 }

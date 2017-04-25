@@ -19,8 +19,8 @@ public class MotivationPage extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.motivation_page);
-        String text = randomize();
-        quoteGoesHere.setText(text);
+        /*String text = randomize();
+        quoteGoesHere.setText(text);*/
     }
 
 
@@ -37,7 +37,7 @@ public class MotivationPage extends Activity {
     //goes to the Motivation Settings page
     public void onMotivationSettingsClicked(View s){
         if(s.getId() == R.id.motivationSettingsButton){
-            Intent i = new Intent(MotivationPage.this, IntroPage.class);
+            Intent i = new Intent(MotivationPage.this, MotivationSettings.class);
             startActivity(i);
         }
     }
