@@ -94,4 +94,10 @@ public class Water extends Activity {
             Log.d("SubtractButton", "CurrentWaterAmount = " + currentWaterAmount);
         }
     }
+    public void onWaterSettingsClick(View s){
+        if(s.getId() == R.id.waterSetButton){
+            Intent i = new Intent(Water.this, WaterSettingsPage.class);
+            startActivity(i);
+        }
+    }
 }

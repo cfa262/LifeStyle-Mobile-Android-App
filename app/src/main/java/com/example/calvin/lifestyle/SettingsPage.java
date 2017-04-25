@@ -17,7 +17,7 @@ public class SettingsPage extends Activity {
     }
     public void onWaterSettingsClicked(View w){
         if(w.getId() == R.id.WaterReminderSettingsButton){
-            Intent ws = new Intent(SettingsPage.this, WaterSettings.class);
+            Intent ws = new Intent(SettingsPage.this, WaterSettingsPage.class);
             startActivity(ws);
         }
     }
