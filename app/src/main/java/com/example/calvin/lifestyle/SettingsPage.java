@@ -34,12 +34,5 @@ public class SettingsPage extends Activity {
         }
     }
 
-    public void onSettingsBackClicked(View s){
-        if(s.getId() == R.id.backSettingsButton){
-            Intent bs = new Intent(SettingsPage.this, IntroPage.class);
-            startActivity(bs);
-
-        }
-    }
 
 }
