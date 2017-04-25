@@ -71,6 +71,7 @@ public class MotivationSettings extends Activity {
         }
     }*/
 
+
     public void switch1(){
         Switch switchOne   = (Switch) findViewById(R.id.switch1);
         switchOne.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
