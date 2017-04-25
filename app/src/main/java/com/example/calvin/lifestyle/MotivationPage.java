@@ -1,7 +1,11 @@
 package com.example.calvin.lifestyle;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -12,13 +16,18 @@ import java.util.*;
 
 public class MotivationPage extends Activity {
 
-    TextView quoteGoesHere;
-    public ArrayList<String> quotesFromSettings = MotivationSettings.quotes;
+    ArrayList<String> quotesFromSettings = MotivationSettings.quotes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.motivation_page);
+
+        TextView quote = (TextView) findViewById(R.id.quoteGoesHere);
+        //ArrayList<String> quotesFromSettings = MotivationSettings.quotes;
+
+
+        quote.setText("Excuses don't burn calories");
         /*String text = randomize();
         quoteGoesHere.setText(text);*/
     }
@@ -34,7 +43,10 @@ public class MotivationPage extends Activity {
     }
 
 
-    //goes to the Motivation Settings page
+
+
+
+        //goes to the Motivation Settings page
     public void onMotivationSettingsClicked(View s){
         if(s.getId() == R.id.motivationSettingsButton){
             Intent i = new Intent(MotivationPage.this, MotivationSettings.class);

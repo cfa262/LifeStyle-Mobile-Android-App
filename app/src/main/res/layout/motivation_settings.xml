@@ -2,20 +2,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="28dp">
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-    </ScrollView>
-
-        <Switch
+    <Switch
             android:text="The harder you try, the better you are"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,4 +48,103 @@
             android:layout_below="@+id/switch10"
             android:text="Keep it up!" />
 
-    </RelativeLayout>
+    <Switch
+        android:id="@+id/switch16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/switch14"
+        android:text="Don't wish for it, work for it"
+        android:layout_alignParentEnd="true" />
+
+    <Switch
+        android:id="@+id/switch17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/switch16"
+        android:text="No excuses!"
+        android:layout_alignParentEnd="true" />
+
+    <Switch
+        android:id="@+id/switch18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/switch17"
+        android:text="Stop saying tomorrow"
+        android:layout_alignParentEnd="true" />
+
+    <Switch
+        android:id="@+id/switch19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/switch18"
+        android:text="You can do this!"
+        android:layout_alignParentEnd="true" />
+
+    <Switch
+        android:id="@+id/switch20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/switch19"
+        android:text="You are on your way to being great!"
+        android:layout_alignParentEnd="true" />
+
+    <Switch
+        android:id="@+id/switch21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/switch20"
+        android:text="Picture the end"
+        android:layout_alignParentEnd="true" />
+
+    <Switch
+        android:id="@+id/switch22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/switch21"
+        android:text="Excuses don't burn calories"
+        android:layout_alignParentEnd="true" />
+
+    <Switch
+        android:id="@+id/switch23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/switch22"
+        android:text="Wake up! Work!"
+        android:layout_alignParentEnd="true" />
+
+    <Switch
+        android:id="@+id/switch24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/switch23"
+        android:text="Be strong. Don't be fearful" />
+
+    <Switch
+        android:id="@+id/switch25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/switch24"
+        android:text="Stay Energized."
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:text="Choose quotes" />
+
+</RelativeLayout>
