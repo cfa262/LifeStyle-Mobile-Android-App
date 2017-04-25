@@ -1,15 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:background="@android:color/holo_orange_dark">
 
-    <Button
+    <TextView
+        android:id="@+id/waterText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:text="Productivity Settings"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_centerHorizontal="true"
+        android:text="Enter Minutes for new Application Limit:"
+        android:textStyle="normal|bold" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:id="@+id/waterNumberText"
+        android:textAlignment="center"
+        android:layout_below="@+id/textView6"
+        android:layout_toEndOf="@+id/productivitySettingsBackButton" />
+
+    <Button
+        android:id="@+id/productivitySettingsBackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/productivitySettingsBackButton"
-        android:background="@android:drawable/ic_delete"
+        android:background="?android:attr/homeAsUpIndicator"
         android:onClick="onProSettingsBackClicked" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/currentWaterText"
+        android:text="0"
+        android:textAlignment="center"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/editText2"
+        android:layout_alignStart="@+id/waterNumberText" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textStyle="normal|bold"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/currentWaterText"
+        android:layout_below="@+id/waterText"
+        android:layout_marginTop="70dp"
+        android:ems="10"
+        android:inputType="textImeMultiLine|textPersonName"
+        android:text="Current Application Limit"
+        android:textAlignment="center" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/waterNumberText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:clickable="true"
+        android:onClick="addWaterClicked"
+        app:backgroundTint="@android:color/holo_orange_light"
+        app:fabSize="normal"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
+    <Switch
+        android:id="@+id/proswitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/waterText"
+        android:layout_marginTop="21dp"
+        android:text="Turn on notifications for usage limit" />
+
 </RelativeLayout>
