@@ -18,7 +18,7 @@ import java.util.*;
 
 public class MotivationSettings extends Activity {
 
-    public ArrayList<String> quotes = new ArrayList<String>();
+    public static ArrayList<String> quotes = new ArrayList<String>();
 
     //list of motivational quotes
     Switch switchOne   = (Switch) findViewById(R.id.switch1);
@@ -46,6 +46,7 @@ public class MotivationSettings extends Activity {
     }*/
 
     public void switch1(){
+        @Override
         switchOne.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             public void onCheckedChanged(CompoundButton buttonview, boolean isChecked){
@@ -72,6 +73,7 @@ public class MotivationSettings extends Activity {
             }
         }
     }
+
     //goes back to the movitation page page
     public void onMotiSettingsBackClicked(View s){
         if(s.getId() == R.id.motivationSettingsBackButton){
