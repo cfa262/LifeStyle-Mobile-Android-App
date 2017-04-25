@@ -26,6 +26,9 @@ public class MotivationPage extends Activity {
 
     public String randomize(){
         Random rand = new Random();
+        if(MotivationSettings.quotes.size() == 0){
+            return "Excuses don't burn calories";
+        }
         int randomIndex = rand.nextInt(MotivationSettings.quotes.size() + 1);
         return quotesFromSettings.get(randomIndex);
     }
