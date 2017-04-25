@@ -46,18 +46,18 @@ public class MotivationSettings extends Activity {
     }*/
 
     public void switch1(){
-        @Override
-        switchOne.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
+        switchOne.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
             public void onCheckedChanged(CompoundButton buttonview, boolean isChecked){
                 if(isChecked){
                     quotes.add("The harder you try, the better you are");
                 }
-                else(!isChecked){
+                else{
                     quotes.remove("The harder you try, the better you are");
                 }
             }
-        }
+        });
     }
 
     public void switch2(){
@@ -67,11 +67,11 @@ public class MotivationSettings extends Activity {
                 if (isChecked) {
                     quotes.add("Do what you need to do now! Thank yourself later!");
                 }
-                else(!isChecked){
+                else{
                     quotes.remove("Do what you need to do now! Thank yourself later!");
                 }
             }
-        }
+        });
     }
 
     //goes back to the movitation page page
@@ -86,7 +86,7 @@ public class MotivationSettings extends Activity {
 
 }
 
-public class NotificationReceiver extends BroadcastReceiver {
+/*public class NotificationReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -106,4 +106,4 @@ public class NotificationReceiver extends BroadcastReceiver {
         notificationManager.notify(100,builder.build());
 
     }
-}
+}*/
