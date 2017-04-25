@@ -1,64 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-    <Switch
-        android:text="The harder you try, the better you are"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/switch1"
-        android:layout_marginTop="55dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Switch
+            android:text="The harder you try, the better you are"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/switch1"
+            android:layout_marginTop="55dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
 
+        <Switch
+            android:id="@+id/switch10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Let's get moving"
+            android:layout_below="@+id/switch13"
+            android:layout_alignLeft="@+id/switch13"
+            android:layout_alignStart="@+id/switch13"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/motivationSettingsBackButton"
-        android:layout_weight="1"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="onMotivationBackClicked"
-        android:background="?android:attr/homeAsUpIndicator"/>
+        <Switch
+            android:id="@+id/switch13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do what you need to do now! Thank yourself later!"
+            android:layout_below="@+id/switch1"
+            android:layout_alignLeft="@+id/switch1"
+            android:layout_alignStart="@+id/switch1"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
-    <Switch
-        android:id="@+id/switch10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Let's get moving"
-        android:layout_below="@+id/switch13"
-        android:layout_alignLeft="@+id/switch13"
-        android:layout_alignStart="@+id/switch13"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        <Switch
+            android:id="@+id/switch14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/switch10"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignStart="@+id/switch10"
+            android:layout_below="@+id/switch10"
+            android:text="Keep it up!" />
 
-    <Switch
-        android:id="@+id/switch13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Do what you need to do now! Thank yourself later!"
-        android:layout_below="@+id/switch1"
-        android:layout_alignLeft="@+id/switch1"
-        android:layout_alignStart="@+id/switch1"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Switch
-        android:id="@+id/switch14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/switch10"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignStart="@+id/switch10"
-        android:layout_below="@+id/switch10"
-        android:text="Keep it up!" />
-
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

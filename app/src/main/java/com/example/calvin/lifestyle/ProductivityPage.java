@@ -21,12 +21,12 @@ public class ProductivityPage extends AppCompatActivity
     private static final int MY_PERMISSIONS_REQUEST_PACKAGE_USAGE_STATS = 100;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.productivity_page);
         fillStats();
     }
+
 
     private void fillStats()
     {
@@ -96,6 +96,7 @@ public class ProductivityPage extends AppCompatActivity
             if(count==0)
             {
                 currentLeast=time;
+                least=c;
                 count++;
             }
             if(time>currentMost)
@@ -122,5 +123,4 @@ public class ProductivityPage extends AppCompatActivity
         lStringBuilder.append("Total time spent on phone today: "+ total +" minutes\n");
         lTextView.setText(lStringBuilder.toString());
     }
-
 }
