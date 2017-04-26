@@ -7,7 +7,6 @@
         android:text="Reminders"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/waterSettingsBackButton"
         android:layout_marginTop="29dp"
         android:id="@+id/switch2"
         android:layout_alignParentRight="true"
@@ -94,17 +93,6 @@
         android:layout_alignParentStart="true" />
 
     <Switch
-        android:text="Stop Reminders at 100%"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/switch2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/switch11"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Switch
         android:text="Testing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -113,15 +101,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/waterSettingsBackButton"
-        android:background="?attr/actionModeCloseDrawable"
-        android:onClick="onWaterSettingsBackClicked"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
 </RelativeLayout>

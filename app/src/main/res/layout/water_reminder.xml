@@ -37,28 +37,21 @@
         android:id="@+id/waterNumberText"
         android:textAlignment="center" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/backWaterButton"
-        android:onClick="onWaterBackClicked"
-        android:background="?android:attr/homeAsUpIndicator" />
-
     <EditText
+        android:id="@+id/currentWaterText"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:ems="10"
-        android:layout_above="@+id/waterNumberText"
-        android:layout_alignRight="@+id/waterNumberText"
-        android:layout_alignEnd="@+id/waterNumberText"
-        android:layout_marginBottom="34dp"
-        android:id="@+id/currentWaterText"
+        android:inputType="number"
+        android:singleLine="false"
         android:text="0"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/editText2"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:text="Add Water"
@@ -70,38 +63,62 @@
         android:textStyle="normal|bold" />
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        app:fabSize="normal"
-        app:srcCompat="@android:drawable/ic_menu_add"
-        android:id="@+id/floatingActionButton"
-        app:backgroundTint="?attr/actionModeSplitBackground"
-        android:onClick="addWaterClicked"
         android:layout_below="@+id/textView6"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp" />
+        android:layout_marginTop="11dp"
+        android:clickable="true"
+        android:onClick="addWaterClicked"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal"
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
     <EditText
+        android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:ems="10"
         android:inputType="textPersonName"
         android:text="Current Water Intake"
-        android:ems="10"
-        android:id="@+id/editText2"
         android:textAlignment="center"
+        android:textSize="24sp"
         android:layout_below="@+id/waterText"
-        android:layout_alignLeft="@+id/currentWaterText"
-        android:layout_alignStart="@+id/currentWaterText" />
+        android:layout_centerHorizontal="true" />
 
     <Button
+        android:id="@+id/subtractWater"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/subtractWater"
-        android:onClick="onClickSubtract"
         android:background="@android:drawable/ic_notification_clear_all"
+        android:backgroundTint="@color/colorPrimary"
+        android:onClick="onClickSubtract"
         android:layout_below="@+id/floatingActionButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="31dp" />
+        android:layout_marginTop="29dp"
+        android:layout_alignEnd="@+id/textView6"
+        android:layout_alignStart="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_below="@+id/floatingActionButton"
+        android:layout_marginTop="14dp"
+        android:text="Delete Water"
+        android:textAlignment="center"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/waterSetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@android:drawable/toast_frame"
+        android:onClick="onWaterSettingsClick"
+        android:text="Settings" />
 
 </RelativeLayout>

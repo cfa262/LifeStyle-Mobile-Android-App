@@ -26,6 +26,8 @@
         <activity android:name=".ProductivityPage"/>
         <activity android:name=".SettingsPage"/>
         <activity android:name=".WaterSettings"/>
+
+        <activity android:name=".WaterSettingsPage"/>
         <activity android:name=".ProductivitySettings"/>
         <activity android:name=".MotivationSettings"/>
 

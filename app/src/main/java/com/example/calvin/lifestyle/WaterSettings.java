@@ -32,76 +32,105 @@ public class WaterSettings extends Activity {
     Context context;
     PendingIntent pending_intent;
 
+    Switch reminderSwitch = (Switch) findViewById(R.id.switch2);
+    Switch second930 = (Switch) findViewById(R.id.switch4);
+    Switch testSwitch = (Switch) findViewById(R.id.switch12);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.water_settings);
+        activateSwitches();
 
-
-        // initiate a Switch
-        Switch reminderSwitch = (Switch) findViewById(R.id.switch2);
-        Switch percentDone = (Switch) findViewById(R.id.switch11);
-        Switch first830 = (Switch) findViewById(R.id.switch3);
-        Switch second930 = (Switch) findViewById(R.id.switch4);
-        Switch third1000 = (Switch) findViewById(R.id.switch5);
-        Switch fourth1100 = (Switch) findViewById(R.id.switch6);
-        Switch fifth1200 = (Switch) findViewById(R.id.switch7);
-        Switch sixth100 = (Switch) findViewById(R.id.switch8);
-        Switch seventh400 = (Switch) findViewById(R.id.switch9);
-        Switch testSwitch = (Switch) findViewById(R.id.switch12);
-
-
-
-        /*
-        Button button = (Button) findViewById(R.id.waterTesterButton);
-
-        button.setOnClickListener(new View.OnClickListener(){
-             @Override
-             public void onClick(View v){
-                 Calendar calendar = Calendar.getInstance();
-                 calendar.set(Calendar.HOUR_OF_DAY,1);
-                 calendar.set(Calendar.MINUTE,6);
-                 calendar.set(Calendar.SECOND, 0);
-                 Intent intent = new Intent(getApplicationContext(),NotificationReceiver.class);
-                 PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
-                 AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-                 alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),alarmManager.INTERVAL_DAY,pendingIntent);
-             }
-        });
-        */
-
-
-        //will activate and check if the switch is on or not
+    }
+    private void activateSwitches(){
         reminderSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
 
+                //if reminderSwitch is switched on then the other switches may work
                 if (isChecked) {
+                    //add all the methods in here to call instances of Calendar
                     Toast.makeText(getApplicationContext(), "ON", Toast.LENGTH_LONG).show();
 
+                    testerSwitch1();
+
+                    /*
                     Calendar calendar = Calendar.getInstance();
-                    calendar.set(Calendar.HOUR_OF_DAY,22);
-                    calendar.set(Calendar.MINUTE,35);
-                    calendar.set(Calendar.SECOND,0);
-                    Intent intent = new Intent(WaterSettings.this,NotificationReceiver.class);
+                    calendar.set(Calendar.HOUR_OF_DAY, 22);
+                    calendar.set(Calendar.MINUTE, 35);
+                    calendar.set(Calendar.SECOND, 0);
+                    Intent intent = new Intent(WaterSettings.this, NotificationReceiver.class);
                     //Intent intent = new Intent(getApplicationContext(),NotificationReceiver.class);
-                    PendingIntent pendingIntent = PendingIntent.getBroadcast(WaterSettings.this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(WaterSettings.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                     //PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
-                    AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-                    alarmManager.set(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
+                    AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                     //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),alarmManager.INTERVAL_DAY,pendingIntent);
 
                     //gives a notification to user by calling this method
                     //addNotification();
+                    */
 
                 } else {
                     Toast.makeText(getApplicationContext(), "OFF", Toast.LENGTH_LONG).show();
                 }
             }
         });
+    }
+    private void testerSwitch1(){
 
+        testSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
+            @Override
+            public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
+
+                //if reminderSwitch is switched on then the other switches may work
+                if (isChecked) {
+                    //Toast.makeText(getApplicationContext(), "ON", Toast.LENGTH_LONG).show();
+
+                    //add all the methods in here to call instances of Calendar
+                    //int hours = 3;
+
+                    Calendar calendar = Calendar.getInstance();
+                    int hours = calendar.get(Calendar.HOUR_OF_DAY);
+                    int minutes = calendar.get(Calendar.MINUTE);
+
+                    //calendar.set(Calendar.HOUR_OF_DAY, Calendar.get(Calendar.HOUR_OF_DAY));
+                    calendar.set(Calendar.HOUR_OF_DAY, hours);
+                    calendar.set(Calendar.MINUTE, minutes+1);
+                    calendar.set(Calendar.SECOND, 0);
+                    Intent intent = new Intent(WaterSettings.this, NotificationReceiver.class);
+                    //Intent intent = new Intent(getApplicationContext(),NotificationReceiver.class);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(WaterSettings.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                    //PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+                    AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+                    //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),alarmManager.INTERVAL_DAY,pendingIntent);
+
+                    //gives a notification to user by calling this method
+                    //addNotification();
+
+                } else {
+                    //Toast.makeText(getApplicationContext(), "OFF", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+    private void testerSwitch2(){
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY,22);
+        calendar.set(Calendar.MINUTE,35);
+        calendar.set(Calendar.SECOND,0);
+        Intent intent = new Intent(WaterSettings.this,NotificationReceiver.class);
+        //Intent intent = new Intent(getApplicationContext(),NotificationReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(WaterSettings.this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+        //PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
+    }
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
         //this.context = this;
@@ -117,7 +146,7 @@ public class WaterSettings extends Activity {
 
         //create an intent to the Alarm Receiver class
         //Intent my_intent = new Intent(this.context, Alarm_Reciever.class);
-    }
+
 
     /*
     //testing method to notify user by time
@@ -190,65 +219,26 @@ public class WaterSettings extends Activity {
         });
         */
 
-
-    private void switchON(){
-
-        /*
-        // initiate a Switch
-        Switch reminderSwitch = (Switch) findViewById(R.id.switch2);
-
-        reminderSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(CompoundButton buttonview, boolean isChecked){
-                if(isChecked){
-                    Toast.makeText(getApplicationContext(), "ON", Toast.LENGTH_LONG.show();
-
-                }else{
-                    Toast.makeText(getApplicationContext(), "OFF", Toast.LENGTH_LONG.show();
-                }
-        }
-                                           }
-        // check current state of a Switch (true or false).
-        Boolean switchState = reminderSwitch.isChecked();
-        //if reminder switch is turned on - active
-        if(switchState){
-            //turn on notifications
-
-        }*/
-    }
-    private void switchOff(){
-        // initiate a Switch
-        Switch reminderSwitch = (Switch) findViewById(R.id.switch2);
-
-        // check current state of a Switch (true or false).
-        Boolean switchState = reminderSwitch.isChecked();
-        //if reminder switch is turned on - active
-        if(!switchState){
-            //turn off notifications
-
-        }
-    }
-    private void addNotification(){
+    private void addNotification() {
 
         Notification.Builder builder =
                 new Notification.Builder(WaterSettings.this)
-                .setTicker("TickerTITLE")
-                .setContentTitle("WATER REMINDER")
-                .setContentText("It's time to drink water!")
-                .setSmallIcon(R.drawable.ic_notifications_black_24dp);
+                        .setTicker("TickerTITLE")
+                        .setContentTitle("WATER REMINDER")
+                        .setContentText("It's time to drink water!")
+                        .setSmallIcon(R.drawable.ic_notifications_black_24dp);
 
         Intent notificationIntent = new Intent(this, WaterSettings.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(WaterSettings.this,0, notificationIntent,
+        PendingIntent contentIntent = PendingIntent.getActivity(WaterSettings.this, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);
 
         //Add as notification
-        NotificationManager manager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            manager.notify(0,builder.build());
+            manager.notify(0, builder.build());
         }
-
+    }
         // mId allows you to update the notification later on.
         //mNotificationManager.notify(mId, mBuilder.build());
 
@@ -270,16 +260,25 @@ public class WaterSettings extends Activity {
                 //manager.notify(0,builder.build());
 
          */
-    }
 
-    public void onWaterSettingsBackClicked(View s) {
-        if (s.getId() == R.id.waterSettingsBackButton) {
-            Intent i = new Intent(WaterSettings.this, SettingsPage.class);
-            startActivity(i);
 
-        }
-    }
+  /*
+        Button button = (Button) findViewById(R.id.waterTesterButton);
 
+        button.setOnClickListener(new View.OnClickListener(){
+             @Override
+             public void onClick(View v){
+                 Calendar calendar = Calendar.getInstance();
+                 calendar.set(Calendar.HOUR_OF_DAY,1);
+                 calendar.set(Calendar.MINUTE,6);
+                 calendar.set(Calendar.SECOND, 0);
+                 Intent intent = new Intent(getApplicationContext(),NotificationReceiver.class);
+                 PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+                 AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+                 alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),alarmManager.INTERVAL_DAY,pendingIntent);
+             }
+        });
+        */
 
 
 
