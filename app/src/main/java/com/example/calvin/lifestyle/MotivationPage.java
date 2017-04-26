@@ -28,9 +28,15 @@ public class MotivationPage extends Activity {
         Bundle bundle = getIntent().getExtras();
         if(bundle != null) {
             String quote1 = bundle.getString("quote1");
-            //String quote2 = bundle.getString("quote2");
+            String quote2 = bundle.getString("quote2");
+            String quote3 = bundle.getString("quote3");
+            String quote4 = bundle.getString("quote4");
+            String quote5 = bundle.getString("quote5");
             otherQuotes.add(quote1);
-            //otherQuotes.add(quote2);
+            otherQuotes.add(quote2);
+            otherQuotes.add(quote3);
+            otherQuotes.add(quote4);
+            otherQuotes.add(quote5);
             motivation = (TextView) findViewById(R.id.quoteGoesHere);
             motivation.setText(quote1);
         }

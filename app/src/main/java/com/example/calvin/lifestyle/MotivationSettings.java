@@ -33,8 +33,10 @@ public class MotivationSettings extends Activity {
 
         //list of motivational quotes
         switch1();
+        switch13();
         switch10();
-
+        switch14();
+        switch16();
     }
 
     private void addNotification() {
@@ -76,9 +78,9 @@ public class MotivationSettings extends Activity {
         });
     }
 
-    public void switch10(){
-        Switch switchTen   = (Switch) findViewById(R.id.switch10);
-        switchTen.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+    public void switch13(){
+        Switch switchThirteen   = (Switch) findViewById(R.id.switch13);
+        switchThirteen.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
 
@@ -94,11 +96,68 @@ public class MotivationSettings extends Activity {
         });
     }
 
+    public void switch10(){
+        Switch switchTen   = (Switch) findViewById(R.id.switch10);
+        switchTen.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
+
+                if (isChecked) {
+                    quotes.add("Let's get moving");
+                }
+
+                /*else{
+                    quotes.remove("Do what you need to do now! Thank yourself later!");
+                }*/
+            }
+
+        });
+    }
+
+    public void switch14(){
+        Switch switchFourteen   = (Switch) findViewById(R.id.switch14);
+        switchFourteen.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
+
+                if (isChecked) {
+                    quotes.add("Keep it up!");
+                }
+
+                /*else{
+                    quotes.remove("Do what you need to do now! Thank yourself later!");
+                }*/
+            }
+
+        });
+    }
+
+    public void switch16(){
+        Switch switchSixteen   = (Switch) findViewById(R.id.switch16);
+        switchSixteen.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
+
+                if (isChecked) {
+                    quotes.add("Don't wish for it, work for it");
+                }
+
+                /*else{
+                    quotes.remove("Do what you need to do now! Thank yourself later!");
+                }*/
+            }
+
+        });
+    }
+
     public void onMotivationPageClick(View s){
         if(s.getId() == R.id.backButton) {
             Intent passDataIntent = new Intent(this, MotivationPage.class);
-            //passDataIntent.putExtra("quote1", quotes.get(0));
             passDataIntent.putExtra("quote1", quotes.get(0));
+            passDataIntent.putExtra("quote2", quotes.get(1));
+            passDataIntent.putExtra("quote3", quotes.get(2));
+            passDataIntent.putExtra("quote4", quotes.get(3));
+            passDataIntent.putExtra("quote5", quotes.get(4));
             startActivity(passDataIntent);
         }
     }
