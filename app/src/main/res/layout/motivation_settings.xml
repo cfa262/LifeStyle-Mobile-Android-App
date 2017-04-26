@@ -147,4 +147,13 @@
         android:layout_marginTop="18dp"
         android:text="Choose quotes" />
 
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:text="Go Back"
+        android:onClick="onMotivationPageClick"/>
+
 </RelativeLayout>

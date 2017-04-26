@@ -16,33 +16,35 @@ import java.util.*;
 
 public class MotivationPage extends Activity {
 
-    ArrayList<String> quotesFromSettings = MotivationSettings.quotes;
+    TextView motivation;
+    ArrayList<String> otherQuotes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.motivation_page);
-
-        TextView quote = (TextView) findViewById(R.id.quoteGoesHere);
-        //ArrayList<String> quotesFromSettings = MotivationSettings.quotes;
-
-
-        quote.setText("Excuses don't burn calories");
-        /*String text = randomize();
-        quoteGoesHere.setText(text);*/
+        otherQuotes = new ArrayList<String>();
+        otherQuotes.add("You got this");
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null) {
+            String quote1 = bundle.getString("quote1");
+            //String quote2 = bundle.getString("quote2");
+            otherQuotes.add(quote1);
+            //otherQuotes.add(quote2);
+            motivation = (TextView) findViewById(R.id.quoteGoesHere);
+            motivation.setText(quote1);
+        }
     }
 
 
-    public String randomize(){
+    /*public String randomize(){
         Random rand = new Random();
         if(MotivationSettings.quotes.size() == 0){
             return "Excuses don't burn calories";
         }
         int randomIndex = rand.nextInt(MotivationSettings.quotes.size() + 1);
         return quotesFromSettings.get(randomIndex);
-    }
-
-
+    }*/
 
 
 
@@ -51,6 +53,15 @@ public class MotivationPage extends Activity {
         if(s.getId() == R.id.motivationSettingsButton){
             Intent i = new Intent(MotivationPage.this, MotivationSettings.class);
             startActivity(i);
+        }
+    }
+
+    public void onChangeQuoteClicked(View s){
+        if(s.getId() == R.id.changeButton){
+            motivation = (TextView) findViewById(R.id.quoteGoesHere);
+            Random rand = new Random();
+
+            motivation.setText(otherQuotes.get(rand.nextInt(otherQuotes.size())));
         }
     }
 }

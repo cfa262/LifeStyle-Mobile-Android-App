@@ -20,7 +20,7 @@ import java.util.*;
 
 public class MotivationSettings extends Activity {
 
-    public static ArrayList<String> quotes;
+    public ArrayList<String> quotes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +32,8 @@ public class MotivationSettings extends Activity {
         quotes = new ArrayList<String>();
 
         //list of motivational quotes
-        //Switch switchOne   = (Switch) findViewById(R.id.switch1);
-        Switch switchTwo   = (Switch) findViewById(R.id.switch10);
-        Switch switchThree = (Switch) findViewById(R.id.switch13);
-        Switch switchFour  = (Switch) findViewById(R.id.switch14);
         switch1();
-        //switch2();
+        switch10();
 
     }
 
@@ -62,14 +58,6 @@ public class MotivationSettings extends Activity {
         }
     }
 
-    /*//adds quote to current list of quotes
-    public void addQuote(View s){
-        if(s.getId().equals(R.id.addQuote)){
-            EditText input = (EditText)findViewById(R.id.enterNewQuote);
-            String newQuote = input.getText().toString();
-            Switch
-        }
-    }*/
 
 
     public void switch1(){
@@ -88,21 +76,32 @@ public class MotivationSettings extends Activity {
         });
     }
 
-    /*public void switch2(){
-        switchTwo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-
+    public void switch10(){
+        Switch switchTen   = (Switch) findViewById(R.id.switch10);
+        switchTen.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
             public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
-                if (isChecked) {
-                    quotes.add("Do what you need to do now! Thank yourself later!");
-                }
-                else{
+
+                    if (isChecked) {
+                        quotes.add("Do what you need to do now! Thank yourself later!");
+                    }
+
+                /*else{
                     quotes.remove("Do what you need to do now! Thank yourself later!");
-                }
+                }*/
             }
+
         });
-    }*/
+    }
 
-
+    public void onMotivationPageClick(View s){
+        if(s.getId() == R.id.backButton) {
+            Intent passDataIntent = new Intent(this, MotivationPage.class);
+            //passDataIntent.putExtra("quote1", quotes.get(0));
+            passDataIntent.putExtra("quote1", quotes.get(0));
+            startActivity(passDataIntent);
+        }
+    }
 
 }
 
