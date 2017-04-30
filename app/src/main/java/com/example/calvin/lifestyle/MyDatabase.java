@@ -15,7 +15,6 @@ public class MyDatabase extends SQLiteOpenHelper{
     public static final String TABLE_PRODUCTS = "products";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_PRODUCTNAME = "productname";
-    public static final int COLUMN_WATERINTAKE = 0;
 
     public MyDatabase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
@@ -75,6 +74,7 @@ public class MyDatabase extends SQLiteOpenHelper{
         db.close();
         return dbString;
     }
+    /*
     //Print out the database as a string
     public String databaseToString(){
         String dbString = "";
@@ -95,4 +95,5 @@ public class MyDatabase extends SQLiteOpenHelper{
         db.close();
         return dbString;
     }
+    */
 }

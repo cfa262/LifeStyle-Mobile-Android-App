@@ -50,17 +50,15 @@ public class WaterSettingsPage extends Activity {
     }
     private void eightAmSwitch(){
         Calendar calendar = Calendar.getInstance();
-        int hours = calendar.get(Calendar.HOUR_OF_DAY);
-        int minutes = calendar.get(Calendar.MINUTE);
+        //int hours = calendar.get(Calendar.HOUR_OF_DAY);
+        //int minutes = calendar.get(Calendar.MINUTE);
 
         //calendar.set(Calendar.HOUR_OF_DAY, Calendar.get(Calendar.HOUR_OF_DAY));
-        calendar.set(Calendar.HOUR_OF_DAY, hours);
-        calendar.set(Calendar.MINUTE, minutes+1);
+        calendar.set(Calendar.HOUR_OF_DAY, 8);
+        calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         Intent intent = new Intent(WaterSettingsPage.this, NotificationReceiver.class);
-        //Intent intent = new Intent(getApplicationContext(),NotificationReceiver.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(WaterSettingsPage.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        //PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
     }

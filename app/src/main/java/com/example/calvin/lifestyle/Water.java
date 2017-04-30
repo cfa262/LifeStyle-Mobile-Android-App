@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -17,13 +18,10 @@ import static com.example.calvin.lifestyle.R.id.currentWaterText;
 public class Water extends Activity {
 
     MyDatabase myDatabase;
-    //WaterLimit myLimit;
     int waterAmount;
     int currentWaterAmount;
-    float tempWaterAmount;
     TextView waterTextView;
     EditText editWaterText;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,22 +29,25 @@ public class Water extends Activity {
         setContentView(R.layout.water_reminder);
         editWaterText = (EditText)findViewById(R.id.waterNumberText);
         waterTextView = (TextView) findViewById(R.id.currentWaterText);
-        //myLimit = new WaterLimit();
-
         myDatabase = new MyDatabase(this, null, null, 1);
+
         printDatabase();
 
+    }
+    int getCurrentWaterAmount(){
+        return currentWaterAmount;
     }
 
     //Add a product to the database
     public void printDatabase(){
         String dbString = myDatabase.waterToString();
         currentWaterAmount = Integer.parseInt(dbString);
-        //String dbString = myDatabase.databaseToString();
         waterTextView.setText(dbString);
         editWaterText.setText("");
 
     }
+
+
     //adds current intake of water
     public void addWaterClicked(View s){
 
@@ -57,6 +58,8 @@ public class Water extends Activity {
                 waterText = "0";
             waterAmount = Integer.parseInt(waterText);
             this.currentWaterAmount += waterAmount;
+            //if(currentWaterAmount >= waterLimit)
+                //Toast.makeText(getApplicationContext(), "CONGRATS! YOU'VE ACCOMPLISHED YOUR GOAL!", Toast.LENGTH_LONG).show();
             waterTextView.setText(Integer.toString(currentWaterAmount));
 
             //WaterProduct product = new WaterProduct(editWaterText.getText().toString());
