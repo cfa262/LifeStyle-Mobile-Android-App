@@ -61,15 +61,16 @@ public class AppTestingCases extends Activity {
     @Test
     public void productivity_notification() throws Exception{
         //test if productivity notification is working
+
         Switch proswitch = (Switch) findViewById(R.id.proswitch);
-        String indicator= "OFF";
+        String indicator = "OFF";
 
         proswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
 
                 if (isChecked) {
-                    indicator="ON";
+                    indicator = "ON";
                     Toast.makeText(getApplicationContext(), indicator, Toast.LENGTH_LONG).show();
 
                     assertEquals(indicator, "ON");

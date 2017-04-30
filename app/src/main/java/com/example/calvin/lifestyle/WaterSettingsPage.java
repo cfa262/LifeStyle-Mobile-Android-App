@@ -17,6 +17,7 @@ import java.util.Calendar;
 public class WaterSettingsPage extends Activity {
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,15 +34,65 @@ public class WaterSettingsPage extends Activity {
             @Override
             public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
 
-                Switch eightAm = (Switch) findViewById(R.id.switch11);
-                eightAm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                if(isChecked){
+                    Switch eightAm = (Switch) findViewById(R.id.switch11);
+                    Switch eightthirtySwitch = (Switch) findViewById(R.id.switch15);
+                    Switch nineSwitch = (Switch) findViewById(R.id.switch16);
+                    Switch ninethirtySwitch = (Switch) findViewById(R.id.switch17);
+                    Switch tenSwitch = (Switch) findViewById(R.id.switch18);
 
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
-                        eightAmSwitch();
-                    }
+                    eightAm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
-                });
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
+                            if(isChecked){
+                                eightAmSwitch();
+                            }
+                        }
+
+                    });
+                    eightthirtySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
+                            if(isChecked){
+                                eightthirtySwitchOn();
+                            }
+                        }
+
+                    });
+                    nineSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
+                            if(isChecked){
+                                nineSwitchOn();
+                            }
+                        }
+
+                    });
+                    ninethirtySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
+                            if(isChecked){
+                                ninethirtySwitchOn();
+                            }
+                        }
+
+                    });
+                    tenSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+                        @Override
+                        public void onCheckedChanged(CompoundButton buttonview, boolean isChecked) {
+                            if(isChecked){
+                                tenSwitchOn();
+                            }
+                        }
+
+                    });
+                }
+
 
             }
 
@@ -55,6 +106,50 @@ public class WaterSettingsPage extends Activity {
 
         //calendar.set(Calendar.HOUR_OF_DAY, Calendar.get(Calendar.HOUR_OF_DAY));
         calendar.set(Calendar.HOUR_OF_DAY, 8);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        Intent intent = new Intent(WaterSettingsPage.this, NotificationReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(WaterSettingsPage.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    }
+    private void eightthirtySwitchOn(){
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.set(Calendar.HOUR_OF_DAY, 8);
+        calendar.set(Calendar.MINUTE, 30);
+        calendar.set(Calendar.SECOND, 0);
+        Intent intent = new Intent(WaterSettingsPage.this, NotificationReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(WaterSettingsPage.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    }
+    private void nineSwitchOn(){
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.set(Calendar.HOUR_OF_DAY, 9);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        Intent intent = new Intent(WaterSettingsPage.this, NotificationReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(WaterSettingsPage.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    }
+    private void ninethirtySwitchOn(){
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.set(Calendar.HOUR_OF_DAY, 9);
+        calendar.set(Calendar.MINUTE, 30);
+        calendar.set(Calendar.SECOND, 0);
+        Intent intent = new Intent(WaterSettingsPage.this, NotificationReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(WaterSettingsPage.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    }
+    private void tenSwitchOn(){
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.set(Calendar.HOUR_OF_DAY, 10);
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         Intent intent = new Intent(WaterSettingsPage.this, NotificationReceiver.class);

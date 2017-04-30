@@ -7,11 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
-import static com.example.calvin.lifestyle.R.id.currentWaterText;
 
 
 
@@ -30,11 +26,11 @@ public class Water extends Activity {
         editWaterText = (EditText)findViewById(R.id.waterNumberText);
         waterTextView = (TextView) findViewById(R.id.currentWaterText);
         myDatabase = new MyDatabase(this, null, null, 1);
-
         printDatabase();
 
     }
-    int getCurrentWaterAmount(){
+
+    public int getCurrentWaterAmount(){
         return currentWaterAmount;
     }
 
@@ -49,9 +45,9 @@ public class Water extends Activity {
 
 
     //adds current intake of water
-    public void addWaterClicked(View s){
+    public void addWaterClicked(View a){
 
-        if(s.getId() == R.id.floatingActionButton){
+        if(a.getId() == R.id.floatingActionButton){
             //EditText num = (EditText)findViewById(R.id.waterNumberText);
             String waterText = editWaterText.getText().toString();
             if(waterText.equals(""))
@@ -97,8 +93,9 @@ public class Water extends Activity {
             Log.d("SubtractButton", "CurrentWaterAmount = " + currentWaterAmount);
         }
     }
-    public void onWaterSettingsClick(View s){
-        if(s.getId() == R.id.waterSetButton){
+
+    public void onWaterSettingsClick(View d){
+        if(d.getId() == R.id.waterSetButton){
             Intent i = new Intent(Water.this, WaterSettingsPage.class);
             startActivity(i);
         }
